@@ -4,7 +4,7 @@ class GuessWord extends React.Component{
     render(){
         return(
             <div>
-                Guess Word input
+                <input type="text" /><input type="Submit" value="Guess" />
             </div>
         )
     }
