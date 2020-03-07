@@ -4,7 +4,10 @@ class Letters extends React.Component{
     render(){
         return(
             <div>
-                letters to choose from
+                {this.props.letters ? 
+                this.props.letters.map(letter => {
+                    return letter
+                }) : null}
             </div>
         )
     }
