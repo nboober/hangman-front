@@ -4,7 +4,9 @@ class Word extends React.Component{
     render(){
         return(
             <div>
-                Status of word with correct guess letters and underscores
+                {this.props.split ? this.props.split.map(letter => {
+                    return "_ "
+                }) : null}
             </div>
         )
     }

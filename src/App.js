@@ -41,7 +41,7 @@ class App extends React.Component{
         <GuessWord guessWord={this.guessWord} />
         <Letters/>
         <Man/>
-        <Word/>
+        <Word word={this.state.word} split={this.state.splitWord}/>
       </div>
     )
   }
