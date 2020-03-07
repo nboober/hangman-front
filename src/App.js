@@ -29,10 +29,14 @@ class App extends React.Component{
     })
   }
 
+  guessWord = (event) => {
+    console.log(event)
+  }
+
   render(){
     return(
       <div>
-        <GuessWord/>
+        <GuessWord guessWord={this.guessWord} />
         <Letters/>
         <Man/>
         <Word/>
