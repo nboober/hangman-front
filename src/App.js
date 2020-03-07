@@ -9,7 +9,8 @@ class App extends React.Component{
   constructor(){
     super()
     this.state={
-      word: ""
+      word: "",
+      splitWord: ""
     }
   }
 
@@ -24,7 +25,8 @@ class App extends React.Component{
     .then(response => response.json())
     .then(wordArray => {
       this.setState({
-        word: wordArray[0]
+        word: wordArray[0],
+        splitWord: wordArray[0].split("")
       })
     })
   }
