@@ -4,7 +4,7 @@ class Man extends React.Component{
     render(){
         return(
             <div>
-                Hang Man Image
+                <img src={require(`../images/${this.props.images[0]}`)} alt="hangman image" />
             </div>
         )
     }

@@ -14,7 +14,7 @@ class App extends React.Component{
       splitWord: "",
       randomizedLetters: "",
       chosenLetters: [],
-      hangmanImages = ["hangman"]
+      hangmanImages: ["hangman0.jpg","hangman1.jpg","hangman2.jpg","hangman3.jpg","hangman4.jpg","hangman5.jpg","hangman6.jpg"]
     }
   }
 
@@ -86,7 +86,7 @@ class App extends React.Component{
       <div>
         <GuessWord guessWord={this.guessWord} />
         <Letters letters={this.state.randomizedLetters} chooseLetters={this.chooseLetters} />
-        <Man/>
+        <Man images={this.state.hangmanImages}/>
         <Word word={this.state.word} split={this.state.splitWord} chosenLetters={this.state.chosenLetters}/>
       </div>
     )
