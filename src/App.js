@@ -13,7 +13,8 @@ class App extends React.Component{
       word: "",
       splitWord: "",
       randomizedLetters: "",
-      chosenLetters: []
+      chosenLetters: [],
+      hangmanImages = ["hangman"]
     }
   }
 
