@@ -12,7 +12,8 @@ class App extends React.Component{
     this.state={
       word: "",
       splitWord: "",
-      randomizedLetters: ""
+      randomizedLetters: "",
+      chosenLetters: []
     }
   }
 
@@ -72,11 +73,18 @@ class App extends React.Component{
     console.log(event)
   }
 
+  chooseLetters = (event) => {
+    this.setState({
+        chosenLetters: [...this.state.chosenLetters, event.target.innerText]
+    })
+    console.log(event.target.innerText)
+  }
+
   render(){
     return(
       <div>
         <GuessWord guessWord={this.guessWord} />
-        <Letters letters={this.state.randomizedLetters} />
+        <Letters letters={this.state.randomizedLetters} chooseLetters={this.chooseLetters} />
         <Man/>
         <Word word={this.state.word} split={this.state.splitWord}/>
       </div>
