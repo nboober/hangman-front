@@ -86,7 +86,7 @@ class App extends React.Component{
         <GuessWord guessWord={this.guessWord} />
         <Letters letters={this.state.randomizedLetters} chooseLetters={this.chooseLetters} />
         <Man/>
-        <Word word={this.state.word} split={this.state.splitWord}/>
+        <Word word={this.state.word} split={this.state.splitWord} chosenLetters={this.state.chosenLetters}/>
       </div>
     )
   }
