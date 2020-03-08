@@ -6,9 +6,9 @@ class Word extends React.Component{
         return(
             <div>
                 {this.props.split ? 
-                    this.props.split.map(letter => {
+                    this.props.split.map((letter, index) => {
                         return this.props.chosenLetters.includes(letter) ?
-                         <span>{letter} </span> : <span>_ </span>
+                         <span key={letter}>{letter} </span> : <span key={letter}>_ </span>
                         })
                 : null}
             </div>
