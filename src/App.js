@@ -10,6 +10,7 @@ class App extends React.Component{
   constructor(){
     super()
     this.state={
+      level: 0,
       word: "",
       splitWord: "",
       randomizedLetters: "",
@@ -75,7 +76,7 @@ class App extends React.Component{
 
     if(event.toLowerCase() === this.state.word){
 
-      console.log("You Win");
+      this.win()
 
     }else{
 
@@ -120,7 +121,7 @@ class App extends React.Component{
   }
 
   win = () => {
-
+    console.log("You Win")
   }
 
   lose = () => {
@@ -133,7 +134,7 @@ class App extends React.Component{
         <GuessWord guessWord={this.guessWord} />
         <Letters letters={this.state.randomizedLetters} chooseLetters={this.chooseLetters} />
         <Man images={this.state.hangmanImages} incorrectNumber={this.state.incorrectGuessNumber}/>
-        <Word word={this.state.word} split={this.state.splitWord} chosenLetters={this.state.chosenLetters}/>
+        <Word word={this.state.word} split={this.state.splitWord} chosenLetters={this.state.chosenLetters} win={this.win}/>
       </div>
     )
   }
