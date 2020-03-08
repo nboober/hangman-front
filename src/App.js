@@ -79,11 +79,18 @@ class App extends React.Component{
 
     }else{
 
+      let incorrect = ++this.state.incorrectGuessNumber
+
       console.log("Incorrect");
-      this.setState({
-        incorrectGuessNumber: this.state.incorrectGuessNumber += 1
-      })
       
+      this.setState({
+        incorrectGuessNumber: incorrect
+      })
+
+      if(incorrect === 6){
+        console.log("You Lose")
+      }
+
     }
   }
 
@@ -96,10 +103,18 @@ class App extends React.Component{
 
     }else{
 
+      let incorrect = ++this.state.incorrectGuessNumber
+
+      console.log("Incorrect");
+
       this.setState({
         chosenLetters: [...this.state.chosenLetters, event.target.innerText],
-        incorrectGuessNumber: this.state.incorrectGuessNumber += 1
+        incorrectGuessNumber: incorrect
       })
+
+      if(incorrect === 6){
+        console.log("You Lose")
+      }
 
     }
   }
