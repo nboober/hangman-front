@@ -88,7 +88,7 @@ class App extends React.Component{
       })
 
       if(incorrect === 6){
-        console.log("You Lose")
+        this.lose()
       }
 
     }
@@ -113,10 +113,18 @@ class App extends React.Component{
       })
 
       if(incorrect === 6){
-        console.log("You Lose")
+        this.lose()
       }
 
     }
+  }
+
+  win = () => {
+
+  }
+
+  lose = () => {
+    console.log("You Lose")
   }
 
   render(){
