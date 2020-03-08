@@ -76,10 +76,20 @@ class App extends React.Component{
   }
 
   chooseLetters = (event) => {
-    this.setState({
-        chosenLetters: [...this.state.chosenLetters, event.target.innerText]
-    })
-    console.log(event.target.innerText)
+    if(this.state.word.includes(event.target.innerText)){
+      
+      this.setState({
+          chosenLetters: [...this.state.chosenLetters, event.target.innerText]
+      })
+
+    }else{
+
+      this.setState({
+        chosenLetters: [...this.state.chosenLetters, event.target.innerText],
+        incorrectGuessNumber: this.state.incorrectGuessNumber += 1
+      })
+
+    }
   }
 
   render(){
