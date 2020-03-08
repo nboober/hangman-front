@@ -72,7 +72,19 @@ class App extends React.Component{
   }
 
   guessWord = (event) => {
-    console.log(event)
+
+    if(event.toLowerCase() === this.state.word){
+
+      console.log("You Win");
+
+    }else{
+
+      console.log("Incorrect");
+      this.setState({
+        incorrectGuessNumber: this.state.incorrectGuessNumber += 1
+      })
+      
+    }
   }
 
   chooseLetters = (event) => {
