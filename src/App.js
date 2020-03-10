@@ -122,6 +122,7 @@ class App extends React.Component{
 
   win = () => {
     console.log("You Win")
+    window.location.reload()
   }
 
   lose = () => {
