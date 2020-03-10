@@ -122,12 +122,18 @@ class App extends React.Component{
 
   win = () => {
     console.log("You Win")
-    window.location.reload()
+    console.log(`The word was ${this.state.word}`)
+    setTimeout(() => {
+      window.location.reload()
+    }, 2000);
   }
-
+  
   lose = () => {
     console.log("You Lose")
-    window.location.reload()
+    console.log(`The word was ${this.state.word}`)
+    setTimeout(() => {
+      window.location.reload()
+    }, 2000);
   }
 
   render(){
