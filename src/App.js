@@ -126,6 +126,7 @@ class App extends React.Component{
 
   lose = () => {
     console.log("You Lose")
+    window.location.reload()
   }
 
   render(){
