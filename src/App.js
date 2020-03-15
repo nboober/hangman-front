@@ -35,11 +35,11 @@ class App extends React.Component{
     .then(response => response.json())
     .then(wordArray => {
       this.setState({
+        level: this.state.level += 1,
         word: wordArray[index],
         splitWord: wordArray[index].split(""),
         chosenLetters: [],
-        incorrectGuessNumber: 0,
-        level: this.state.level += 1
+        incorrectGuessNumber: 0
       },()=>{
         this.randomizedLetters()
       })
