@@ -1,10 +1,13 @@
 import React from 'react';
+import HighScoreButton from './components/highscorebutton'
 import Level from './components/level'
 import GuessWord from './components/guessWord'
 import Letters from './components/letters'
 import Man from './components/man'
 import Word from './components/word'
+import HighScores from './components/highscores'
 import _ from 'underscore'
+import { Switch, Route } from 'react-router-dom'
 import './App.css';
 
 class App extends React.Component{
@@ -144,11 +147,22 @@ class App extends React.Component{
   render(){
     return(
       <div>
-        <Level level={this.state.level} />
-        <GuessWord guessWord={this.guessWord} />
-        <Letters letters={this.state.randomizedLetters} chooseLetters={this.chooseLetters} />
-        <Man images={this.state.hangmanImages} incorrectNumber={this.state.incorrectGuessNumber}/>
-        <Word word={this.state.word} split={this.state.splitWord} chosenLetters={this.state.chosenLetters} win={this.win}/>
+        <Switch>
+
+          <Route exact path="/">
+            <HighScoreButton/>
+            <Level level={this.state.level} />
+            <GuessWord guessWord={this.guessWord} />
+            <Letters letters={this.state.randomizedLetters} chooseLetters={this.chooseLetters} />
+            <Man images={this.state.hangmanImages} incorrectNumber={this.state.incorrectGuessNumber}/>
+            <Word word={this.state.word} split={this.state.splitWord} chosenLetters={this.state.chosenLetters} win={this.win}/>
+          </Route>
+
+          <Route exact path="/high-scores">
+            <HighScores/>
+          </Route>
+
+        </Switch>
       </div>
     )
   }
