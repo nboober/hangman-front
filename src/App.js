@@ -1,4 +1,5 @@
 import React from 'react';
+import Level from './components/level'
 import GuessWord from './components/guessWord'
 import Letters from './components/letters'
 import Man from './components/man'
@@ -142,6 +143,7 @@ class App extends React.Component{
   render(){
     return(
       <div>
+        <Level level={this.state.level} />
         <GuessWord guessWord={this.guessWord} />
         <Letters letters={this.state.randomizedLetters} chooseLetters={this.chooseLetters} />
         <Man images={this.state.hangmanImages} incorrectNumber={this.state.incorrectGuessNumber}/>
