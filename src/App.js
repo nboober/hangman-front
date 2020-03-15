@@ -35,8 +35,10 @@ class App extends React.Component{
     .then(response => response.json())
     .then(wordArray => {
       this.setState({
-        word: wordArray[0],
-        splitWord: wordArray[index].split("")
+        word: wordArray[index],
+        splitWord: wordArray[index].split(""),
+        chosenLetters: [],
+        incorrectGuessNumber: 0
       },()=>{
         this.randomizedLetters()
       })
@@ -125,11 +127,17 @@ class App extends React.Component{
   }
 
   win = () => {
-    console.log("You Win")
-    console.log(`The word was ${this.state.word}`)
+    console.log(`You Won!! \n The word was ${this.state.word}`)
+    console.log(`Next Level is Level ${this.state.level + 2}`)
+    // setTimeout(() => {
+    //   window.location.reload()
+    // }, 2000);
     setTimeout(() => {
-      window.location.reload()
-    }, 2000);
+      this.setState({
+        level: this.state.level + 1
+      })
+      this.fetchNewWord();
+    }, 6000);
   }
   
   lose = () => {
