@@ -4,7 +4,7 @@ class Level extends React.Component{
     render(){
         return(
             <div>
-                Level {this.props.level + 1}
+                Level {this.props.level}
             </div>
         )
     }
