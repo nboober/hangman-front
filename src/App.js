@@ -27,12 +27,15 @@ class App extends React.Component{
   }
   
   fetchNewWord = () => {
+
+    let index = Math.floor(Math.random() * 50)
+
     fetch("http://localhost:3000/word")
     .then(response => response.json())
     .then(wordArray => {
       this.setState({
         word: wordArray[0],
-        splitWord: wordArray[0].split("")
+        splitWord: wordArray[index].split("")
       },()=>{
         this.randomizedLetters()
       })
